@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UsersApp.Pages.Users.List" Appearing="ContentPage_Appearing" Title="Users">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="lstUsers" CachingStrategy="RecycleElement" IsPullToRefreshEnabled="True" RowHeight="70" ItemsSource="{Binding .}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" ItemAppearing="lstUsers_ItemAppearing">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid ColumnSpacing="0" RowSpacing="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="80" />
+                                    <ColumnDefinition Width="1*" />
+
+                                </Grid.ColumnDefinitions>
+                                <Frame Grid.Column="0" Grid.Row="0" StyleClass="list-image" VerticalOptions="Center" HorizontalOptions="Center">
+                                    <Image HeightRequest="60" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                                        <Image.Source>
+                                            <UriImageSource CacheValidity="10" CachingEnabled="true" Uri="{Binding Avatar}" />
+                                        </Image.Source>
+                                    </Image>
+                                </Frame>
+
+                                <Label Grid.Column="1" Grid.Row="0" Text="{Binding FullName}" StyleClass="list-item" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start" />
+
+
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+                <ListView.Footer>
+                    <ActivityIndicator IsVisible="True" x:Name="actLoadingMore" Color="Black" HeightRequest="25" HorizontalOptions="Center" VerticalOptions="Center"  />
+                </ListView.Footer>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

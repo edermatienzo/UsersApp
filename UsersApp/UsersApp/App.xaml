@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UsersApp.App">
+    <Application.Resources>
+
+        <Style TargetType="Label"  Class="list-item" ApplyToDerivedTypes="True">
+            <Setter Property="Margin" Value="0,10,0,0" />
+            <Setter Property="FontSize" Value="16" />
+        </Style>
+        
+        <Style TargetType="Frame"  Class="list-image" ApplyToDerivedTypes="True">
+            <Setter Property="CornerRadius" Value="30" />
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="HeightRequest" Value="60" />
+            <Setter Property="WidthRequest" Value="60" />
+        </Style>
+        
+    </Application.Resources>
+</Application>
